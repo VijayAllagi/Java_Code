@@ -7,10 +7,10 @@ public class InterSectionPoint {
 	 System.out.println("dd"+ counta);
 	 int d = Math.abs(counta-countb);
 	 if(counta > countb){
-		 System.out.println(intersect(a.head,b.head,d));
+		 System.out.println("Intersection Node:" + intersect(a.head,b.head,d));
 	 }
 	 else {
-		 System.out.println(intersect(b.head,a.head,d));
+		 System.out.println("Intersection Node:"+ intersect(b.head,a.head,d));
 	 }
 	 
  }
@@ -52,24 +52,26 @@ public static void main(String[] args) {
 	//Create the indidual nodes and add it linked list
     Node Head1 = new Node(1,null);
 	Node Head2 = new Node(5,null);
-	
+	System.out.println("Start of the main");
+
 	Node Elm1 = new Node(1,null);
 	Node Elm2 = new Node(5,null);
 	Node Elm3 = new Node(1,null);
 	Node Elm1Linked2 = new Node(2,null);
 	//Ll addition
+	//Ll    1->1->5->1
+	//L2 5->2->1->5->1
 	ll.insertLast(Head1);
 	ll.insertLast(Elm1);
 	ll.insertLast(Elm2);
 	ll.insertLast(Elm3);
-	
+	ll.printLinkedList(ll.head);
 	//L2 addition
 	l2.insertLast(Head2);
 	l2.insertLast(Elm1Linked2);
 	l2.insertLast(Elm1);
-	l2.insertLast(Elm2);
-	l2.insertLast(Elm3);
-	System.out.println("In Main Call the fn");
+	l2.printLinkedList(l2.head);
+
 	InterSectionPoint.findIntersect(ll,l2);
 	
 }
